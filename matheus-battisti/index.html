@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+    <main>
+        <h1>Todo Avançado</h1>
+
+        <hr>
+
+        <section class="adicao_tarefas">
+            <h2>Adicone sua tarefa</h2>
+            <input id="input_adicao_tarefas" type="text" placeholder="O que você vai fazer?">
+            <button id="btn_adicao_tarefas"> <i class="fa-thin fa-plus" ></i> </button>
+        </section>
+
+        <hr>
+
+        <section class="pesquisa_filtragem">
+            <div class="pesquisa" id="pesquisa">
+                <h2>Pesquisar</h2>
+                <input type="text" placeholder="Buscar...">
+                <button> <i class="fa-solid fa-delete-left" ></i> </button>
+            </div>
+
+            <div class="filtragem">
+                <h2>Filtrar</h2>
+                <select name="" id="filtro">
+                    <option value="all"> Todos </option>
+                    <option value="done"> Feitos</option>
+                    <option value="todo"> A fazer </option>
+                </select>
+            </div>
+        </section>
+
+        <section class="container" id="container">
+            <hr>
+            <div class ="item afazer" >
+                <h2 class="h2-item" >Ir no mercado comprara os bagulhos e ser feliz </h2>
+                <div class="botoes">
+                    <button class="finish-todo">
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                    <button class="remove-todo">
+                    <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="item feito">
+                <h2 class="h2-item">Ir no mercado</h2>
+                <div class="botoes">
+                    <button class="finish-todo">
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                    <button class="remove-todo">
+                    <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRUM KIT</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body { 
+            background: black url(externos/background_img.jpg) no-repeat center center;
+            background-size: cover;
+            overflow-y: hidden;
+            width: 100%;
+            height: 100vh;
+            
+        }
+        .title{
+            text-align: center;
+            font-size: calc(5vw + 20px);
+            margin-block: 15vh;
+            color: #ffcc00;
+            text-shadow: 0 0 10px black, 0 0 10px black, 0 0 10px black;
+        }
+
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 90%;
+            height: 100px;
+            margin: auto ;
+            gap: 15px;
+        }
+
+        .key{
+            display: flex;  
+            width: 100px;
+            height: 100px;
+            align-items: center;
+            justify-content: center;
+            background-color: #000000BB;
+            border: 3px solid white;
+            user-select: none;
+            cursor: pointer;
+            color: white;
+            font-size: calc(1vw + 20px);
+            transition: all 0.2s;
+        }
+        
+        .active{
+            transform: scale(1.3);
+            border-color: #ffcc00 ;
+            box-shadow: 0 0 50px #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <div class="title"> DRUM KIT </div>
+    <div class="container" id="container">
+        <!-- <div class="key"> A</div>
+        <div class="key"> B</div>
+        <div class="key"> A</div>
+        <div class="key"> B</div> -->
+
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

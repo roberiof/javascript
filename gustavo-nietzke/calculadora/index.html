@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 1.5rem;
+            font-weight: bolder ;
+            color: white;
+            user-select: none;
+        }
+
+        .calculator{
+            margin: 5% auto;
+            background-color: black;
+            width: 500px;
+            height: 540px;
+            position: relative;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .display{
+            position: absolute;
+            top: 8%;
+            left: 50%;
+            transform: translate(-50%);
+            text-align: right;
+            background-color: lightslategray;
+            width: 400px;
+            height: 60px;
+            padding: 10px 20px;
+        }
+
+        .calculator-buttons{
+            width: 400px;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%) ;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        
+        button{
+            background-color: lightslategray;
+            padding: 10px;
+            width: 100px;
+        }
+        button:hover{
+            background-color: gray;
+        }
+        .botao-zero{
+            width: 300px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display"></div>
+        <div class="calculator-buttons">
+            <button onclick="limpaDisplay()"> C </button>
+            <button onclick="atualizaDisplay('+')"> + </button>
+            <button onclick="atualizaDisplay('-')" > - </button>
+            <button onclick="limpaTecla()"> &larr; </button>
+
+            <button onclick="atualizaDisplay('7')"  > 7 </button>
+            <button onclick="atualizaDisplay('8')" > 8 </button>
+            <button onclick="atualizaDisplay('9')" > 9 </button>
+            <button onclick="atualizaDisplay('*')" > * </button>
+
+            <button onclick="atualizaDisplay('4')" > 4 </button>
+            <button onclick="atualizaDisplay('5')" > 5 </button>
+            <button onclick="atualizaDisplay('6')" > 6 </button>
+            <button onclick="atualizaDisplay('/')" > / </button>
+
+            <button onclick="atualizaDisplay('1')" > 1 </button>
+            <button onclick="atualizaDisplay('2')" > 2 </button>
+            <button onclick="atualizaDisplay('3')" > 3 </button>
+            <button onclick="atualizaDisplay('.')" > . </button>
+    
+            <button class="botao-zero" onclick="atualizaDisplay('.')" > 0 </button>
+            <button onclick="apresentaResultado()"  > = </button>
+        </div>
+    </div>
+
+    <script>
+        const atualizaDisplay = (num) => {
+            if ((num == '.') && (document.getElementById('display').textContent === '')){
+                num = '0.'
+            }
+            document.getElementById('display').innerHTML += num
+        }
+
+        const limpaDisplay = () => {
+            document.getElementById('display').innerHTML = ''
+        }
+
+        const limpaTecla = () =>{
+            var display = document.getElementById('display').textContent
+            display = display.slice(0, -1)
+            document.getElementById('display').innerHTML = display
+        }
+
+        const apresentaResultado = () => {
+            var display = document.getElementById('display').textContent 
+            var resultado = eval(display)
+            if (resultado.toString().includes('.')){
+                console.log(resultado)
+                resultado = resultado.toFixed(2)
+                console.log(typeof resultado)
+                console.log(resultado)
+            }
+            document.getElementById('display').innerHTML = resultado
+        }
+
+        const atualizarDisplayTeclado = (evento) => {
+            caracteres = ['1' , '2', '3', '4', '5', '6', '7', '8' ,'9' ,'0' , '.', '+' , '-' , '/' , '*']
+            car  = evento.key
+            if (car == 'Backspace'){
+                limpaTecla()
+            } else if (car =='Enter'){
+                apresentaResultado()
+            }else if (caracteres.includes(car)){
+                atualizaDisplay(car)
+            } else if (car == 'c'){
+                    limpaDisplay()
+            }
+        }
+        document.addEventListener('keydown' , atualizarDisplayTeclado)
+    </script>
+</body>
+</html>

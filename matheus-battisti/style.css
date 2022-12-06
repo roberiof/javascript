@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  Helvetica, sans-serif;
+    outline: none;
+    user-select: none;
+}
+
+/* CONFIGURANDO O MAIN E OUTRAS TAGS QUE VÃO TER AS MESMAS CARACTERÍSTICAS */
+body{
+    background: black url("todo-list/externos/bg.jpg") no-repeat center center;
+    background-size: cover ;
+    overflow: hidden;
+}
+
+main{
+    background-color: white;
+    /* width: 50%;   ----- é melhor usar max-widht nesse caso, pq em telas grandes não fica gigantesco o ngc */
+    max-width: 500px ; 
+    margin: 3% auto;
+    padding: 3rem;
+    border-radius: 10px ;
+}
+
+h1{ 
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+h2{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+button{
+    background-color: white;
+    color: #102f5e;
+    border: 2px solid #102f5e;
+    padding: 0.3rem 0.6rem;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+button:hover{
+    background-color: #102f5e;
+    color: white;
+}
+
+button i {
+    pointer-events:  none;
+}
+
+input{
+    padding: .5rem;
+    font-weight: bolder ;
+}
+
+.hide{
+    display: none;
+    transition: all 1s;
+}
+
+
+/* CONFIGURAÇAÕ DA ÁREA DE ADIÇÃO DE TAREFAS */
+
+.adicao_tarefas{
+    margin-block: 2em;
+}
+
+/* CONFIGURAÇAÕ DA ÁREA DE PESQUISA E FILTRAGEM */
+
+.pesquisa_filtragem{
+    margin-block: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pesquisa input{
+    width: 70%;
+}
+
+.filtragem select {
+    padding: .3rem .6rem;
+    font-weight: bolder ;
+}
+
+/* CONFIGURAÇÃO DOS ITEMS */
+
+.item{
+    padding: 1rem .5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.h2-item{
+    width: 60%;
+}
+
+.botoes  button{
+    margin-left: .3rem;
+}
+
+.feito h2{
+    text-decoration: line-through;
+    font-style: italic;
+}
+.feito{
+    background-color: #395169;
+}
+
+
+@media screen and (max-width: 475px){
+    main{
+        margin-inline: 1rem
+    }
+}
