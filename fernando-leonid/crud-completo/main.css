@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header{
+    background-color: goldenrod;
+    text-align: center;
+    padding: 15px;
+}
+
+.register-btn{
+    padding: 10px 20px;
+    background-color: aquamarine;
+    border: 0;
+    box-shadow: 0px 0px 5px 0px blue;
+    margin-bottom: 30px;
+
+}
+main{
+    box-shadow: 0px 0px 5px 0px black;
+    margin-inline: 50px;
+    margin-top: 50px ;
+    padding: 50px;
+}
+
+table{
+    border-collapse: collapse;
+    margin: auto;
+}
+
+td ,th{
+    padding: 10px;
+    width: 250px;
+    border: 1px solid black;
+    text-align: left;
+}
+
+th{
+    background-color: goldenrod;
+}
+
+td button{
+    padding: 8px 10px;
+    width: 90px;
+    cursor: pointer;
+}
+
+.div-action-buttons{
+    display: flex;
+    flex-flow: row wrap ;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.edit-item{
+    background-color: lightgreen;
+    border: 0;
+}
+
+.delete-item{
+    background-color: lightcoral;
+    border: 0;
+}
+
+.item:hover{
+    background-color: beige;
+}
+
+@media (max-width: 760px) {
+    td button{
+        font-size: 12px ;
+        width: 65px;
+    }
+    .city-hidden{
+        display: none;
+    }
+}
+

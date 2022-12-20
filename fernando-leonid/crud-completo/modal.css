@@ -1,0 +1,68 @@
+.modal , .modal-edit{
+    transition: all 0.2s;
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 700px;   
+    padding-bottom: 15px ;
+    background-color: whitesmoke;
+    z-index: -1;
+    opacity: 0;
+    background: rgba(#000, .4);
+}
+
+.modal.active , .modal-edit.active{
+    z-index: 2;
+    opacity: 1;
+}
+
+.fundo-modal{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background: rgba(0,0,0,0.8) ;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header-modal{
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    background-color: goldenrod;
+}
+
+.inputs-modal{
+    padding-block: 20px ;
+    display: grid;
+    place-content: center;
+    grid-template-columns: 300px 300px;
+    gap: 5px;
+}
+
+.modal input , .modal-edit input{
+    padding: 10px;
+    outline-color: goldenrod;
+}
+
+.buttons-modal{
+    text-align: right;
+    padding-right: 50px ;
+}
+
+.buttons-modal button{
+    padding: 10px 20px ;
+    width: 100px;
+    border: 0;
+}
+
+.save-modal , .save-modal-edit{
+    background-color: aquamarine;
+    margin-right: 10px;
+}
+
+.cancel-modal , .cancel-modal-edit{
+    background-color: lightcoral;
+}
